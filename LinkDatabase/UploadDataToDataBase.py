@@ -17,7 +17,7 @@ cur = conn.cursor()
 # cur.execute(create_table_query)
 
 # Read data from CSV file and insert into the table
-with open('EndToEndProject.csv', 'r') as file:
+with open('fraudData3.csv', 'r') as file:
     csv_reader = csv.reader(file)
     for row in csv_reader:
         step, type, amount, nameOrig, oldbalanceOrg, newbalanceOrig, nameDest, oldbalanceDest, newbalanceDest, isFraud, isFlaggedFraud = row  # Adjust based on your CSV structure
@@ -28,7 +28,7 @@ with open('EndToEndProject.csv', 'r') as file:
             "(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);",
             (step, type, amount, nameOrig, oldbalanceOrg, newbalanceOrig, nameDest, oldbalanceDest, newbalanceDest,
              isFraud, isFlaggedFraud))
-
+print("Data uploaded successfully!!....")
 # Commit the transaction
 conn.commit()
 

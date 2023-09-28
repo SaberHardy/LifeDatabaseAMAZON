@@ -14,21 +14,10 @@ conn = psycopg2.connect(
 
 cursor = conn.cursor()
 
-sql = '''CREATE TABLE IF NOT EXISTS FraudDetection(
-step VARCHAR(50),
-type VARCHAR(50),
-amount VARCHAR(50),
-nameOrig VARCHAR(50),
-oldbalanceOrg VARCHAR(50),
-newbalanceOrig VARCHAR(50),
-nameDest VARCHAR(50),
-oldbalanceDest VARCHAR(50),
-newbalanceDest VARCHAR(50),
-isFraud VARCHAR(50),
-isFlaggedFraud VARCHAR(50)
-)'''
+sql = '''DROP TABLE IF EXISTS FraudDetection'''
+
 cursor.execute(sql)
-print("Table created successfully........")
+print("Table DROPPED successfully........!!")
 conn.commit()
 # Close the cursor and connection
 cursor.close()
