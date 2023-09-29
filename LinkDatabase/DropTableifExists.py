@@ -14,7 +14,7 @@ conn = psycopg2.connect(
 
 cursor = conn.cursor()
 
-sql = '''DROP TABLE IF EXISTS FraudDetection'''
+sql = '''DROP TABLE IF EXISTS frauddetectionCopy'''
 
 cursor.execute(sql)
 print("Table DROPPED successfully........!!")
